@@ -1,5 +1,6 @@
 .divPrincipal
 {
+  z-index: 0;
   position: absolute;
   background-color: #003049;
   justify-content: space-between;
@@ -98,4 +99,30 @@
   height: 45%;
   width: 98%;
   border-radius: 10px;
+}
+
+.divResultado
+{
+  z-index: 5;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: #003049;
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  height: 110px;
+  width: 220px;
+  border-radius: 10px;
+}
+
+.btnVolverAJugar
+{
+  border-radius: 10px;
+  background-color: #d62828;
+  border-style: none;
 }

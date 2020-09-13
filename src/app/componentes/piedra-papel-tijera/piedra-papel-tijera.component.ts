@@ -33,7 +33,15 @@ export class PiedraPapelTijeraComponent implements OnInit {
         setTimeout(() => {
           elemJug.style.backgroundColor = "#f77f00";
           elemMaq.style.backgroundColor = "#f77f00";
-          this.enableButtons();
+
+          if(this.acumJug == 3 || this.acumMaq == 3)
+          {
+            this.disableButtons();
+          }
+          else
+          {
+            this.enableButtons();
+          }
         }, 2000);
         break;
 
@@ -46,7 +54,15 @@ export class PiedraPapelTijeraComponent implements OnInit {
         setTimeout(() => {
           elemJug.style.backgroundColor = "#f77f00";
           elemMaq.style.backgroundColor = "#f77f00";
-          this.enableButtons();
+
+          if(this.acumJug == 3 || this.acumMaq == 3)
+          {
+            this.disableButtons();
+          }
+          else
+          {
+            this.enableButtons();
+          }
         }, 2000);
         break;
 
@@ -59,7 +75,15 @@ export class PiedraPapelTijeraComponent implements OnInit {
         setTimeout(() => {
           elemJug.style.backgroundColor = "#f77f00";
           elemMaq.style.backgroundColor = "#f77f00";
-          this.enableButtons();
+
+          if(this.acumJug == 3 || this.acumMaq == 3)
+          {
+            this.disableButtons();
+          }
+          else
+          {
+            this.enableButtons();
+          }
         }, 2000);
         break;
     }
@@ -75,8 +99,6 @@ export class PiedraPapelTijeraComponent implements OnInit {
        (elemMaq == "Papel" && elemJug == "Piedra"))
     {
       this.acumMaq++;
-      elemAux = document.getElementById("puntosMaquina");
-      elemAux.textContent = this.acumMaq;
       console.log(this.acumMaq);
     }
     else if((elemMaq == "Papel" && elemJug == "Tijera") ||
@@ -84,8 +106,6 @@ export class PiedraPapelTijeraComponent implements OnInit {
             (elemMaq == "Tijera" && elemJug == "Piedra"))
     {
       this.acumJug++;
-      elemAux = document.getElementById("puntosJugador");
-      elemAux.textContent = this.acumJug;
       console.log(this.acumJug);
     }
     else if(elemMaq == elemJug)
@@ -135,5 +155,12 @@ export class PiedraPapelTijeraComponent implements OnInit {
 
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  reset()
+  {
+    this.acumJug = 0;
+    this.acumMaq = 0;
+    this.enableButtons();
   }
 }

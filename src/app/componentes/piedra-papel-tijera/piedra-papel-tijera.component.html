@@ -7,6 +7,18 @@
 </head>
 <body>
 
+  <div *ngIf="acumJug == 3 || acumMaq == 3" class="divResultado">
+    <div *ngIf="acumJug == 3">
+      Ganaste
+      <br>
+      <button class="btnVolverAJugar" (click)="reset()">Volver a Jugar</button>
+    </div>
+    <div *ngIf="acumMaq == 3">
+      Perdiste
+      <br>
+      <button class="btnVolverAJugar" (click)="reset()">Vovler a Jugar</button>
+    </div>
+  </div>
 
   <!-- div centro, puntajes -->
   <div class="divPrincipal">
@@ -27,12 +39,11 @@
       </div>
 
       <div class="divPuntos">
-        <div class="divTextoPuntos" id="puntosJugador">0</div>
+        <div class="divTextoPuntos" id="puntosJugador">{{acumJug}}</div>
 
-        <div class="divTextoPuntos" id="puntosMaquina">0</div>
+        <div class="divTextoPuntos" id="puntosMaquina">{{acumMaq}}</div>
       </div>
     </div>
-
 
     <!-- div derecho, maquina -->
     <div class="divBtnDer">
@@ -42,8 +53,9 @@
       <br>
       <button class="btnPpt" id="btnTijeraM">Tijera</button>
     </div>
-  </div>
 
+
+  </div>
 
 </body>
 </html>
