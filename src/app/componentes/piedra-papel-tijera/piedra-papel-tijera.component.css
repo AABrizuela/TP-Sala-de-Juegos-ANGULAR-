@@ -1,0 +1,101 @@
+.divPrincipal
+{
+  position: absolute;
+  background-color: #003049;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 2%;
+  left: 8%;
+  right: 8%;
+  bottom: 15%;
+  top: 15%;
+  border-radius: 50px;
+}
+
+.divBtnIzq
+{
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  background-color: #d62828;
+  width: 200px;
+  height: 90%;
+  padding: 10px 0;
+  gap: 10px;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.divBtnDer
+{
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  background-color: #d62828;
+  width: 200px;
+  height: 90%;
+  padding: 10px 0;
+  gap: 10px;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.btnPpt
+{
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 150px;
+  border-style: none;
+
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  background-color: #f77f00;
+  border-radius: 10px;
+}
+
+.divMed
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 90%;
+  width: 60%;
+  border-style: none;
+  background-color: #d62828;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* color: white; */
+  border-radius: 10px;
+}
+
+.divPuntos
+{
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20%;
+  font-size: 90px;
+  height: 40%;
+  width: 98%;
+  border-radius: 10px;
+}
+
+.divTexto
+{
+  background-color: #f77f00;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 10% 17%;
+  font-size: xx-large;
+  height: 45%;
+  width: 98%;
+  border-radius: 10px;
+}
