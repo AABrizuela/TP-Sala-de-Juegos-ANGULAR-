@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div *ngIf="acumJug == 3 || acumMaq == 3" class="divResultado">
+    <div *ngIf="acumJug == 3">
+      Ganaste
+      <br>
+      <button class="btnVolverAJugar" (click)="reset()">Volver a Jugar</button>
+    </div>
+    <div *ngIf="acumMaq == 3">
+      Perdiste
+      <br>
+      <button class="btnVolverAJugar" (click)="reset()">Vovler a Jugar</button>
+    </div>
+  </div>
+
+  <!-- div centro, puntajes -->
+  <div class="divPrincipal">
+    <!-- div izq, jugador -->
+    <div class="divBtnIzq">
+      <button class="btnPpt" id="btnPiedraJ" (click)="playerPick('piedra')">Piedra</button>
+      <br>
+      <button class="btnPpt" id="btnPapelJ" (click)="playerPick('papel')">Papel</button>
+      <br>
+      <button class="btnPpt" id="btnTijeraJ" (click)="playerPick('tijera')">Tijera</button>
+    </div>
+
+    <!-- nombres y puntaje -->
+    <div class="divMed">
+      <div class="divTexto">
+        <p>Jugador</p>
+        <p>Maquina</p>
+      </div>
+
+      <div class="divPuntos">
+        <div class="divTextoPuntos" id="puntosJugador">{{acumJug}}</div>
+
+        <div class="divTextoPuntos" id="puntosMaquina">{{acumMaq}}</div>
+      </div>
+    </div>
+
+    <!-- div derecho, maquina -->
+    <div class="divBtnDer">
+      <button class="btnPpt" id="btnPiedraM">Piedra</button>
+      <br>
+      <button class="btnPpt" id="btnPapelM">Papel</button>
+      <br>
+      <button class="btnPpt" id="btnTijeraM">Tijera</button>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
