@@ -38,8 +38,8 @@ export class AgilidadAritmeticaComponent implements OnInit {
     this.nuevoJuego = true;
     this.ocultarVerificar();
 
-    this.primerNum = this.getRandomInt(10);
-    this.segundoNum = this.getRandomInt(10)
+    this.primerNum = this.getRandomInt(10)+1;
+    this.segundoNum = this.getRandomInt(10)+1;
     this.operando = this.operandos[this.getRandomInt(4)];
     this.resultado = null;
 
@@ -71,6 +71,8 @@ export class AgilidadAritmeticaComponent implements OnInit {
         this.Tiempo=5;
       }
       }, 900);
+
+      document.getElementById("btnNuevo").setAttribute("disabled", "true");
   }
 
   verificar()
@@ -80,6 +82,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
     if(this.resultado == this.resultadoReal)
     {
       document.getElementById("btnNuevo").hidden = false;
+      document.getElementById("btnNuevo").removeAttribute("disabled");
       document.getElementById("btnVerificar").hidden = false;
       document.getElementById("success").hidden = false;
       document.getElementById("fail").hidden = true;
