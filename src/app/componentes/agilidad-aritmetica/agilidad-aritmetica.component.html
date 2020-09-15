@@ -1,38 +1,36 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--app-menu></app-menu-->
-<!-- index.html -->
 
-
-<!-- <form name="juego">
+<form class="formJuego" name="juego">
 <ul>
    <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
+   Primer número: <input placeholder="Primer Numero" type="text" class="form-control" id="primerNumero" value="{{primerNum}}" disabled/>
 
   </li>
   <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
+   Operador: <input placeholder="Operador" type="text" class="form-control" value="{{operando}}" disabled/>
 
   </li>
   <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
+   Segundo número: <input placeholder="Segundo Numero" type="text" class="form-control" value="{{segundoNum}}" disabled/>
 
   </li>
   <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+    Respuesta: <input [(ngModel)]="resultado" [ngModelOptions]="{standalone: true}" id="inputRes" placeholder="Ingrese Respuesta" type="text" class="form-control"/>
 
    </li>
   <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
+    <h2 [hidden]="!ocultarVerificar()"><button  (click)="NuevoJuego()"  class="btnJuego" id="btnNuevo">Nuevo</button></h2>
   </li>
   <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
+    <h2 [hidden]="ocultarVerificar()"><button (click)="verificar()" class="btnJuego" id="btnVerificar">Verificar</button></h2>
   </li>
   <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
+    <h2 ><p class="spinJuego" id="spinJuego" hidden><i></i>Esperando numero...</p></h2>
 
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
+    <h3 id="success" hidden>Ganaste</h3>
+    <h3 id="fail" hidden>Aun no ganaste</h3>
   </li>
 </ul>
 
-</form> -->
+</form>
