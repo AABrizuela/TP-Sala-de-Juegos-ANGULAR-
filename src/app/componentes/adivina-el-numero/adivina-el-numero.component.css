@@ -1,8 +1,16 @@
 
-form {
-    border: 10px solid #f1f1f1;
+.juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
     padding: 10px;
-    background:gray;
+    width: 30%;
+    background: #003049;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 input[type=text], input[type=password] {
@@ -14,9 +22,10 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-button {
-    /*background-color: #4CAF50;*/
-    color: white;
+.btnForm {
+    background-color: #f77f00;
+    color: black;
+    border-radius: 10px;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -74,7 +83,7 @@ span.psw {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
-   
+
     color: #fff;
     text-align: center;
     border-radius: 2px;
@@ -98,7 +107,7 @@ span.psw {
 }
 
 @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
+    from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
 }
 
@@ -108,7 +117,7 @@ span.psw {
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
+    from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 

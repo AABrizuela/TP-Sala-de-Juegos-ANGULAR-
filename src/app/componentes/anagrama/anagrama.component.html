@@ -1,3 +1,10 @@
-<p>
-  anagrama works!
-</p>
+<div class="divPrincipal">
+  <h1>Anagrama</h1>
+  <label for="">{{palabraDesordenada}}</label>
+  <input [(ngModel)]="respuesta" (change)="verificar()" class="inputRes" type="text" placeholder="Ingrese respuesta">
+
+  <label [hidden]="label">Ganaste!!</label>
+  <label [hidden]="!label">Todavia no ganaste</label>
+
+  <button class="btnNuevo" (click)="JuegoNuevo()">Juego Nuevo</button>
+</div>
