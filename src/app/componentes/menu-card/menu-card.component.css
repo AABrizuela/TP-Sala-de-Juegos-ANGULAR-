@@ -1,29 +1,39 @@
 .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    max-width: 300px;
-    height: 100%;
+    max-width: 35%;
+    height: 10%;
     margin: 10px;
     padding-bottom: 10px;
     float: left;
-    background-color: #DEF3A6;
+    background-color: #003049;
     text-align: center;
+    color: white
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
     border-radius: 5px 5px 0 0;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }/* Add some padding inside the card container */
 .containerCosas {
     padding: 2px 16px;
     display: flex;
     align-content: center;
     justify-content: center;
+    flex-direction: column;
 }
 
+.imgThumbnail
+{
+  width: 12% !important;
+  height: 20%;
+}
 
 .button{
     margin-left: 1px;
@@ -35,7 +45,9 @@ img {
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #f77f00;
+    background-image: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    border-color: none;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
