@@ -11,3 +11,23 @@ height: 70px;
     transform: translate(-50%, -50%);
     color: #100000;
     }
+
+.divContainer
+{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+}
+
+.listItem
+{
+  background-color: #003049;
+  list-style: none;
+  width: 100%;
+}
+
+.listGroup
+{
+  height: 40%;
+}
