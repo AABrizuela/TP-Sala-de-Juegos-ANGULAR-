@@ -99,14 +99,12 @@ export class PiedraPapelTijeraComponent implements OnInit {
        (elemMaq == "Papel" && elemJug == "Piedra"))
     {
       this.acumMaq++;
-      console.log(this.acumMaq);
     }
     else if((elemMaq == "Papel" && elemJug == "Tijera") ||
             (elemMaq == "Piedra" && elemJug == "Papel") ||
             (elemMaq == "Tijera" && elemJug == "Piedra"))
     {
       this.acumJug++;
-      console.log(this.acumJug);
     }
     else if(elemMaq == elemJug)
     {
