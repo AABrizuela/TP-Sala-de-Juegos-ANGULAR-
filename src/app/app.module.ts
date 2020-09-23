@@ -56,6 +56,8 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { MemotestComponent } from './componentes/memotest/memotest.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { ResultadoComponent } from './componentes/resultado/resultado.component';
 
 
 @NgModule({
@@ -85,13 +87,15 @@ import { MemotestComponent } from './componentes/memotest/memotest.component';
     SexoPipe,
     PiedraPapelTijeraComponent,
     TatetiComponent,
-    MemotestComponent
+    MemotestComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RuteandoModule,
     HttpModule,
+    MatGridListModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

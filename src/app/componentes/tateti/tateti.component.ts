@@ -1,7 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import * as $ from 'jquery';
 import { Router } from '@angular/router';
-//import { JuegoServiceService } from '../../servicios/juego-service.service';
+
+export interface Tile {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+}
 
 @Component({
   selector: 'app-tateti',
@@ -11,15 +16,22 @@ import { Router } from '@angular/router';
 export class TatetiComponent implements OnInit
 {
 
-  tablero = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null]
+  isHumanTurn: boolean = true;
+  isHumanWinner: boolean = false;
+  isComputerWinner:boolean = false;
+  tracker: string[] = new Array(9).fill(null);
+
+  tiles: Tile[] = [
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'},
+    {text: '', cols: 1, rows: 1, color: '#f77f00'}
   ];
-  numNodes:number = 0;
-  myMove:boolean = false;
-  aiChar:string = "";
-  humanChar:string = "";
 
   constructor(private route:Router) {
 
@@ -29,153 +41,56 @@ export class TatetiComponent implements OnInit
 
   }
 
-  getGanador(tablero)
+  setMove(index: number)
   {
-    // Check if someone won
-    var vals = [true, false];
-    var allNotNull = true;
-    for (var k = 0; k < vals.length; k++) {
-      var value = vals[k];
-
-      // Check rows, columns, and diagonals
-      var diagonalCompleta1 = true;
-      var diagonalCompleta2 = true;
-      for (var i = 0; i < 3; i++) {
-        if (tablero[i][i] !== value) {
-          diagonalCompleta1 = false;
+    if(this.tracker[index] == null && this.isComputerWinner == false && this.isHumanWinner == false)
+    {
+      this.tracker[index] = 'X';
+      this.tiles[index].text = 'X';
+      this.isHumanWinner = this.checkIfWinner();
+      this.isHumanTurn = false;
+      if(!this.isHumanWinner)
+      {
+        this.findMove();
+        this.isComputerWinner = this.checkIfWinner();
+        if(this.isComputerWinner)
+        {
+          this.isHumanTurn = false;
         }
-        if (tablero[2 - i][i] !== value) {
-          diagonalCompleta2 = false;
-        }
-        var rowComplete = true;
-        var colComplete = true;
-        for (var j = 0; j < 3; j++) {
-          if (tablero[i][j] != value) {
-            rowComplete = false;
-          }
-          if (tablero[j][i] != value) {
-            colComplete = false;
-          }
-          if (tablero[i][j] == null) {
-            allNotNull = false;
-          }
-        }
-        if (rowComplete || colComplete) {
-          return value ? 1 : 0;
-        }
-      }
-      if (diagonalCompleta1 || diagonalCompleta2) {
-        return value ? 1 : 0;
-      }
-    }
-    if (allNotNull) {
-      return -1;
-    }
-    return null;
-  }
-
-
-  reiniciarJuego()
-  {
-    this.tablero = [
-      [null, null, null],
-      [null, null, null],
-      [null, null, null]
-    ];
-    this.myMove = false;
-    this.updMovimiento();
-  }
-
-  updMovimiento()
-  {
-    this.updBotones();
-  var winner = this.getGanador(this.tablero);
-  switch (winner) {
-    case 1:
-      alert("Perdiste!");
-      this.reiniciarJuego();
-      break;
-    case 0:
-      alert("Ganaste!");
-      this.reiniciarJuego();
-      break;
-    case -1:
-      alert("Empate!");
-      this.reiniciarJuego();
-      break;
-  }
-  $("#move").text(this.myMove ? "AI's Move" : "Your move");
-  }
-
-  updBotones()
-  {
-    for (var i = 0; i < 3; i++) {
-      for (var j = 0; j < 3; j++) {
-        $("#c" + i + "" + j).text(this.tablero[i][j] === false ? this.humanChar : this.tablero[i][j] === true ? this.aiChar : " ");
       }
     }
   }
 
-  miniMax(tablero, jugador)
+  checkIfWinner(): boolean
   {
-    this.numNodes++;
-    var winner = this.getGanador(tablero);
-    if (winner !== null) {
-      switch (winner) {
-        case 1:
-          // AI wins
-          return [1, tablero];
-        case 0:
-          // opponent wins
-          return [-1, tablero];
-        case -1:
-          // Tie
-          return [0, tablero];
-      }
-    } else {
-      // Next states
-      var nextVal = null;
-      var nextBoard = null;
-
-      for (var i = 0; i < 3; i++) {
-        for (var j = 0; j < 3; j++) {
-          if (tablero[i][j] === null) {
-            tablero[i][j] = jugador;
-            var value = this.miniMax(tablero, !jugador)[0];
-            if ((jugador && (nextVal === null || value > nextVal)) || (!jugador && (nextVal === null || value < nextVal))) {
-              nextBoard = tablero.map(function(arr) {
-                return arr.slice();
-              });
-              nextVal = value;
-            }
-            tablero[i][j] = null;
-          }
-        }
-      }
-      return [nextVal, nextBoard];
+    if(this.tracker[0] == this.tracker[1] && this.tracker[0] == this.tracker[2] && this.tracker[0] != null
+       || this.tracker[3] == this.tracker[4] && this.tracker[3] == this.tracker[5] && this.tracker[3] != null
+       || this.tracker[6] == this.tracker[7] && this.tracker[6] == this.tracker[8] && this.tracker[6] != null
+       || this.tracker[0] == this.tracker[3] && this.tracker[0] == this.tracker[6] && this.tracker[0] != null
+       || this.tracker[1] == this.tracker[4] && this.tracker[1] == this.tracker[7] && this.tracker[1] != null
+       || this.tracker[2] == this.tracker[5] && this.tracker[2] == this.tracker[8] && this.tracker[2] != null
+       || this.tracker[0] == this.tracker[4] && this.tracker[0] == this.tracker[8] && this.tracker[0] != null
+       || this.tracker[2] == this.tracker[4] && this.tracker[2] == this.tracker[6] && this.tracker[2] != null)
+    {
+      return true;
     }
+
+    return false;
   }
 
-  makeMove() {
-    this.tablero = this.minimaxMove(this.tablero);
-    console.log(this.numNodes);
-    this.myMove = false;
-    this.updMovimiento();
-  }
+  findMove()
+  {
+    let isMoved = false;
 
-  minimaxMove(tablero) {
-    this.numNodes = 0;
-    return this.miniMax(tablero, true)[1];
-  }
-
-
-
-  //updMovimiento();
-  updateMovimiento(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
+    while(!isMoved)
+    {
+      let possibleMoveIndex = Math.floor(Math.random() * 9)
+      if(this.tracker[possibleMoveIndex] == null)
+      {
+        this.tracker[possibleMoveIndex] = 'O';
+        this.tiles[possibleMoveIndex].text = 'O'
+        this.isHumanTurn = true;
+        isMoved = true;
       }
     }
   }

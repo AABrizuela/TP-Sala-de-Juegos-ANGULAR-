@@ -1,22 +1,19 @@
-<div class="wrapper">
-  <h1>Presiona un cuadro para empezar</h1><br><br>
-  <table>
-    <tr>
-      <td><button class="board" id="c00"></button></td>
-      <td><button class="board" id="c01"></button></td>
-      <td><button class="board" id="c02"></button></td>
-    </tr>
-    <tr>
-      <td><button class="board" id="c10"></button></td>
-      <td><button class="board" id="c11"></button></td>
-      <td><button class="board" id="c12"></button></td>
-    </tr>
-    <tr>
-      <td><button class="board" id="c20"></button></td>
-      <td><button class="board" id="c21"></button></td>
-      <td><button class="board" id="c22"></button></td>
-    </tr>
-  </table>
-  <button id="restart">Juego nuevo</button>
-  <div id="dialog-4" title="Player Selection">Elegir jugador</div>
+<div class="divTateti">
+  <h1>TaTeTi</h1>
+  <div *ngIf="isHumanTurn" class="big">Turno Jugador</div>
+  <div class="divTablero">
+    <mat-grid-list cols="3" rowHeight="130px" gutterSize="5px">
+      <mat-grid-tile class="gridTile"
+          *ngFor="let tile of tiles; let i = index"
+          [colspan]="tile.cols"
+          [rowspan]="tile.rows"
+          [style.background]="tile.color"
+          (click)="setMove(i)">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div *ngIf="isHumanWinner" class="big">Ganaste!</div>
+  <div *ngIf="isComputerWinner" class="big">Perdiste!</div>
 </div>
+
