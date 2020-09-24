@@ -25,6 +25,7 @@ import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/p
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
 import { MemotestComponent } from '../componentes/memotest/memotest.component';
+import { ReflejosComponent } from '../componentes/reflejos/reflejos.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -49,7 +50,8 @@ children:
       {path: 'PPT', component: PiedraPapelTijeraComponent},
       {path: 'Anagrama', component: AnagramaComponent},
       {path: 'Tateti', component: TatetiComponent},
-      {path: 'Memotest', component: MemotestComponent}]
+      {path: 'Memotest', component: MemotestComponent},
+      {path: 'Reflejos', component: ReflejosComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

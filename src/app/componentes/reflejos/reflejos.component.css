@@ -1,0 +1,85 @@
+.divPrincipal
+{
+  z-index: 0;
+  position: absolute;
+  background-color: #003049;
+  align-items: center;
+  display: flex;
+  padding: 2%;
+  left: 20%;
+  right: 20%;
+  bottom: 15%;
+  top: 15%;
+  border-radius: 50px;
+}
+
+ .divInicio
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  height: 90%;
+  width: 60%;
+  border-style: none;
+  background-color: white;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* color: white; */
+  border-radius: 10px;
+}
+
+.divRojo
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 90%;
+  width: 60%;
+  border-style: none;
+  background-color: #d62828;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* color: white; */
+  border-radius: 10px;
+}
+
+.divClick
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 90%;
+  width: 60%;
+  border-style: none;
+  background-color: blueviolet;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* color: white; */
+  border-radius: 10px;
+}
+
+.divResultado
+{
+  z-index: 5;
+  position: absolute;
+  display: flex;
+  margin: auto;
+  transform: translate(50%, -50%);
+  background-color: #003049;
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-radius: 10px;
+}
+
+.btnVolverAJugar
+{
+  border-radius: 10px;
+  background-color: #d62828;
+  border-style: none;
+}

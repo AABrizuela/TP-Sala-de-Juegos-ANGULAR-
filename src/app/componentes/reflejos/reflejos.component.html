@@ -1,0 +1,29 @@
+<div class="divPrincipal">
+  <div *ngIf="resultadoPos == true || resultadoNeg == true" class="divResultado">
+    <div *ngIf="resultadoPos">
+      Tu tiempo de reaccion es: {{tiempoReaccion}}ms
+      <br>
+      <button class="btnVolverAJugar" (click)="reset()">Volver a Jugar</button>
+    </div>
+    
+    <div *ngIf="resultadoNeg">
+      Epa! Te apuraste.
+      <br>
+      <button class="btnVolverAJugar" (click)="reset()">Vovler a Jugar</button>
+    </div>
+  </div>
+
+  <div class="divInicio" id="divInicio" (click)="empezar()">
+    <p>Juego de reflejos.</p>
+    <p>El objetivo del juego es medir tu tiempo de reaccion.</p>
+    <p>Click para empezar.</p>
+  </div>
+
+  <div class="divRojo" id="divRojo" *ngIf="mostrarRojo" (click)="clickRojo()">
+    <p>Clickea cuando cambie de color.</p>
+  </div>
+
+  <div class="divClick" id="divClick" *ngIf="mostrarVerde" (click)="clickVerde()">
+    <p>Clickea!!</p>
+  </div>
+</div>
