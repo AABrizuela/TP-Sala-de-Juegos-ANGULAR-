@@ -58,6 +58,7 @@ import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { MemotestComponent } from './componentes/memotest/memotest.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ResultadoComponent } from './componentes/resultado/resultado.component';
+import { ReflejosComponent } from './componentes/reflejos/reflejos.component';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { ResultadoComponent } from './componentes/resultado/resultado.component'
     PiedraPapelTijeraComponent,
     TatetiComponent,
     MemotestComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    ReflejosComponent
   ],
   imports: [
     BrowserModule,

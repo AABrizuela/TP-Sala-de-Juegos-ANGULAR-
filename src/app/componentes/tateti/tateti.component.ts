@@ -19,6 +19,7 @@ export class TatetiComponent implements OnInit
   isHumanTurn: boolean = true;
   isHumanWinner: boolean = false;
   isComputerWinner:boolean = false;
+  isTie:boolean = false;
   tracker: string[] = new Array(9).fill(null);
 
   tiles: Tile[] = [
@@ -51,7 +52,7 @@ export class TatetiComponent implements OnInit
       this.isHumanTurn = false;
       if(!this.isHumanWinner)
       {
-        this.findMove();
+        this.findMove(index);
         this.isComputerWinner = this.checkIfWinner();
         if(this.isComputerWinner)
         {
@@ -78,20 +79,32 @@ export class TatetiComponent implements OnInit
     return false;
   }
 
-  findMove()
+  findMove(index)
   {
     let isMoved = false;
+    var possibleMoveIndex = Math.floor(Math.random() * 9)
+    var findCounter: number = 0;
 
-    while(!isMoved)
+    do
     {
-      let possibleMoveIndex = Math.floor(Math.random() * 9)
-      if(this.tracker[possibleMoveIndex] == null)
+      if(this.tracker[possibleMoveIndex] == null && this.tracker[possibleMoveIndex] != index)
       {
         this.tracker[possibleMoveIndex] = 'O';
         this.tiles[possibleMoveIndex].text = 'O'
         this.isHumanTurn = true;
         isMoved = true;
       }
-    }
+      else
+      {
+        possibleMoveIndex = Math.floor(Math.random() * 9)
+        findCounter++
+      }
+
+      if(findCounter == 18)
+      {
+        this.isTie = true;
+        break;
+      }
+    }while(this.isHumanTurn == false)
   }
 }
