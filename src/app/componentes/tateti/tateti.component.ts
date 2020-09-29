@@ -90,7 +90,7 @@ export class TatetiComponent implements OnInit
       if(this.tracker[possibleMoveIndex] == null && this.tracker[possibleMoveIndex] != index)
       {
         this.tracker[possibleMoveIndex] = 'O';
-        this.tiles[possibleMoveIndex].text = 'O'
+        this.tiles[possibleMoveIndex].text = 'O';
         this.isHumanTurn = true;
         isMoved = true;
       }
