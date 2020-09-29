@@ -11,7 +11,7 @@ img.img-card {
 
 .card-body
 {
-  background-color: #003049;
+  background-color: rgba(0, 48, 73, 0.7);
   color: white;
   text-align: center;
   width: 80%;
@@ -25,4 +25,9 @@ img.img-card {
   background-color: #f77f00;
   border-style: none;
   width: 15%;
+}
+
+.card
+{
+  background-color: transparent !important;
 }

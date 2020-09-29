@@ -1,21 +1,10 @@
-.panel
-{
-    height: 200px;
-    background-image: url("/TP_LAV4_2017/assets/imagenes/cabecera.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-
 .hero-text {
 text-align: center;
 position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-color: #3E06B0;
+color: rgb(62, 6, 176);
 }
 
 .hero-text a {
@@ -32,4 +21,65 @@ cursor: pointer;
 .hero-text a:hover {
 background-color: #555;
 color: white;
+}
+
+.navBar
+{
+  display: flex;
+  /*flex-direction: row;
+  align-items: flex-end;*/
+  width: 100vw;
+  align-items: center;
+  background-color: rgba(0, 48, 73, 0.55);
+  margin-bottom: 10px;
+}
+
+.btnNav
+{
+  background-color: #f77f00;
+  border-style: none;
+  border-radius: 10px
+}
+
+.divLoginRegister
+{
+  margin-left: auto;
+  align-items: flex-end;
+  width: 11%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divGitQuienSoy
+{
+  margin-right: auto;
+  align-items: flex-end;
+  width: 11%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pTitulo
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  font-size: 5vh;
+  margin: 0 auto;
+}
+
+.btnFalso
+{
+  text-align: center;
+}
+
+.loginRegister
+{
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.gitQuienSoy
+{
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

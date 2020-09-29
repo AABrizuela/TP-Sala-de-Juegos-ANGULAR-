@@ -1,0 +1,6 @@
+.divPrincipal
+{
+  background-image: url('../assets/imagenes/synthwave.jpg') !important;
+  background-size: cover;
+  height: 100vh;
+}
