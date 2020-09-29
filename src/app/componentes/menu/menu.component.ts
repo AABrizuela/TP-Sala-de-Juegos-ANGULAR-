@@ -9,26 +9,37 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    public router: Router) { }
 
   ngOnInit() {
   }
 
-  Juego(tipo: string) {
-    switch (tipo) {
-      case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
+  mostrarVolver(ruta)
+  {
+    //mostrar volver cuando estoy en ruta especifica, hacer switch para ver en que ruta estoy
+    switch(ruta)
+    {
+      case '/Juegos/Anagrama':
+        return true;
         break;
-      case 'Agilidad':
-          this.router.navigate(['/Juegos/Agilidad']);
-        break;
-      case 'AdivinaMasListado':
-          this.router.navigate(['/Juegos/AdivinaMasListado']);
-        break;
-      case 'AgilidadaMasListado':
-          this.router.navigate(['/Juegos/AgilidadaMasListado']);
-        break;
+      case '/Juegos/PPT':
+        return true;
+      break;
+      case '/Juegos/Adivina':
+        return true;
+      break;
+      case '/Juegos/Agilidad':
+        return true;
+      break;
+      case '/Juegos/Tateti':
+        return true;
+      break;
+      case '/Juegos/Memotest':
+        return true;
+      break;
+      case '/Juegos/Reflejos':
+        return true;
+      break;
     }
   }
-
 }
