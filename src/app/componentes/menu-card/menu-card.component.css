@@ -2,7 +2,7 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
@@ -18,7 +18,7 @@
 
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px;
     width: 100px;
     height: 100px;
 }/* Add some padding inside the card container */
@@ -33,13 +33,11 @@ img {
 
 .imgThumbnail
 {
-  width: 12% !important;
-  height: 20%;
-}
-
-.divButtonJugar
-{
-  width: 10%;
+  position: relative;
+  width: 25% !important;
+  height: min-content;
+  margin-top: 1vh;
+  margin-left: 1vh;
 }
 
 .buttonJugar{
@@ -48,8 +46,9 @@ img {
     width: auto;
     background-color: black;
     color: white;
-    width: 100%;
-    top: 30%;
+    height: 40%;
+    margin-top: 5.5vh;
+    margin-right: 5vh;
     font-size: 24px;
     border-radius: 10px;
     text-align: center;
@@ -74,7 +73,7 @@ img {
 
 .buttonJugar:after
 {
-  filter: blur(40px);
+  filter: blur(10px);
 }
 
 @keyframes animate
@@ -93,36 +92,13 @@ img {
   }
 }
 
-/* .button:hover {background-color: #3e8e41}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-} */
-
 .pepe
 {
   display: flex;
   flex-direction: row;
 }
 
-/* .newButton
+.divTexto
 {
-  padding: 0;
-  width: 5vw;
-  text-align: center;
-  position: relative;
-  background-image: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #fff;
-  display: block;
-  z-index: 2;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  transition: .2s ease;
-  line-height: 1;
-  cursor: pointer;
-  text-decoration: none;
-} */
+  margin-top: auto;
+}
