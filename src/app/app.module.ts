@@ -60,6 +60,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ResultadoComponent } from './componentes/resultado/resultado.component';
 import { ReflejosComponent } from './componentes/reflejos/reflejos.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -98,9 +102,12 @@ import { ReflejosComponent } from './componentes/reflejos/reflejos.component';
     RuteandoModule,
     HttpModule,
     MatGridListModule,
-    AgmCoreModule.forRoot({
+    AgmCoreModule.forRoot
+    ({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
