@@ -10,6 +10,8 @@
   font-size: x-large;
   font-weight: lighter;
   padding: 5%;
+  overflow: auto;
+  max-height: 70%;
 }
 
 /* Style all font awesome icons */
