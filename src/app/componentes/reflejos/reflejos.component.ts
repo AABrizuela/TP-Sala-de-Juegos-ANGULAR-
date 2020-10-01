@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResJuegosService } from '../../servicios/res-juegos.service';
 
 @Component({
   selector: 'app-reflejos',
@@ -15,7 +16,7 @@ export class ReflejosComponent implements OnInit {
   tiempoReaccion:number = 0;
   temp;
 
-  constructor() { }
+  constructor(private resultado: ResJuegosService) { }
 
   ngOnInit(): void {
 
@@ -40,6 +41,7 @@ export class ReflejosComponent implements OnInit {
     this.tiempoReaccion = ahora.getTime() - this.reaccion.getTime();
     document.getElementById("divClick").setAttribute("hidden", "");
     this.resultadoPos = true;
+    this.resultado.guardarResultado('Reflejos', 'Gano');
   }
 
   clickRojo()

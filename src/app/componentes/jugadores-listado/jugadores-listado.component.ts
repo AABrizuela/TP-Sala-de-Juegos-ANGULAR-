@@ -9,17 +9,17 @@ export class JugadoresListadoComponent implements OnInit {
 
   listado:any
   miJugadoresServicio:JugadoresService
-  
+
     constructor(serviceJugadores:JugadoresService) {
       this.miJugadoresServicio = serviceJugadores;
-      
+
     }
-    
+
 
 
   ngOnInit() {
   }
-
+  
 
   TraerTodos(){
     //alert("totos");

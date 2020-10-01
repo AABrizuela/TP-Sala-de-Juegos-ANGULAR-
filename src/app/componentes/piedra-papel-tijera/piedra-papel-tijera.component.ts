@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResJuegosService } from '../../servicios/res-juegos.service';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -10,7 +11,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   public acumJug:number = 0;
   public acumMaq:number = 0;
 
-  constructor() { }
+  constructor(private resultado: ResJuegosService) { }
 
   ngOnInit(): void {
   }
@@ -99,12 +100,20 @@ export class PiedraPapelTijeraComponent implements OnInit {
        (elemMaq == "Papel" && elemJug == "Piedra"))
     {
       this.acumMaq++;
+      if(this.acumMaq == 3)
+      {
+        this.resultado.guardarResultado('Piedra, papel o tijera', 'Perdio');
+      }
     }
     else if((elemMaq == "Papel" && elemJug == "Tijera") ||
             (elemMaq == "Piedra" && elemJug == "Papel") ||
             (elemMaq == "Tijera" && elemJug == "Piedra"))
     {
       this.acumJug++;
+      if(this.acumJug == 3)
+      {
+        this.resultado.guardarResultado('Piedra, papel o tijera', 'Gano');
+      }
     }
     else if(elemMaq == elemJug)
     {
