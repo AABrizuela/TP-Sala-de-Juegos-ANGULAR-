@@ -24,11 +24,14 @@ export class RegistroComponent implements OnInit {
 
   OnSubmitRegister()
   {
-    if(this.clave == this.confirmaClave)
+    if(this.usuario != '' && this.clave != '' && this.confirmaClave != '')
     {
-      this.authService.register(this.usuario, this.clave).then(res => {
-        this.router.navigate(['/Principal']);
-      }).catch(err => alert('Usuario o Contraseña incorrectas'))
+      if(this.clave == this.confirmaClave)
+      {
+        this.authService.register(this.usuario, this.clave).then(res => {
+          this.router.navigate(['/Principal']);
+        }).catch(err => alert('Usuario o Contraseña incorrectas'))
+      }
     }
   }
 }

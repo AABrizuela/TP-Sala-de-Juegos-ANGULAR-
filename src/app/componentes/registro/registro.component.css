@@ -1,21 +1,35 @@
+.divContainer
+{
+  background-color: rgba(0, 48, 73, 0.55);
+  height: auto;
+  width: 40%;
+  margin: auto;
+  border-radius: 10px;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: x-large;
+  font-weight: lighter;
+  padding: 5%;
+}
+
 input[type=text], input[type=password] {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 /* Set a style for all buttons */
 button {
+  border-radius: 10px;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 30%;
 }
 
 /* Extra styles for the cancel button */

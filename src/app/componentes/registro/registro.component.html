@@ -1,18 +1,19 @@
-<body>
-  <div class="container">
-    <label><b>Email</b></label>
-    <input type="text" placeholder="Ingresa tu correo" name="email" [(ngModel)] = "usuario" required>
+<app-cabecera></app-cabecera>
+<div class="divContainer">
+  <p><b>Email</b></p>
+  <input type="text" placeholder="Ingresa tu correo" name="email" [(ngModel)] = "usuario" required>
 
-    <label><b>Clave</b></label>
-    <input type="password" placeholder="Aca la clave" name="psw" [(ngModel)] = "clave" required>
+  <p><b>Clave</b></p>
+  <input type="password" placeholder="Aca la clave" name="psw" [(ngModel)] = "clave" required>
 
-    <label><b>Repita la clave</b></label>
-    <input type="password" placeholder="Aca repeti la misa clave  de arriba" name="psw-repeat" [(ngModel)] = "confirmaClave" required>
-    <input type="checkbox" checked="checked">Recordar mis datos
-
-    <div class="clearfix">
-      <button type="button" class="cancelbtn" routerLink="/Login">Me arrepenti</button>
-      <button type="submit" class="signupbtn" (click)="OnSubmitRegister()">Registrarme</button>
-    </div>
+  <p><b>Repita la clave</b></p>
+  <input type="password" placeholder="Aca repeti la misa clave  de arriba" name="psw-repeat" [(ngModel)] = "confirmaClave" required>
+  <br>
+  <br>
+  <div class="clearfix">
+    <button type="button" class="cancelbtn" routerLink="/Login">Me arrepenti</button>
+    <button type="submit" class="signupbtn" (click)="OnSubmitRegister()">Registrarme</button>
   </div>
-</body>
+  <br>
+</div>
+

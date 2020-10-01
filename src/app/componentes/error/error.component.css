@@ -1,0 +1,14 @@
+.divContainer
+{
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  color: red;
+  font-size: 10vh;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  border: solid;
+  border-color: red;
+  border-radius: 10px;
+  text-align: center;
+}

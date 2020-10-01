@@ -36,16 +36,24 @@ color: white;
   padding-right: 2%;
 }
 
+.pMail
+{
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 2vh;
+}
+
 .btnNav
 {
   background-color: #f77f00;
   border-style: none;
-  border-radius: 10px
+  border-radius: 10px;
+  margin: auto;
 }
 
 .divLoginRegister
 {
-  margin-left: auto;
+  margin-right: auto;
   align-items: flex-end;
   width: 11%;
   display: flex;

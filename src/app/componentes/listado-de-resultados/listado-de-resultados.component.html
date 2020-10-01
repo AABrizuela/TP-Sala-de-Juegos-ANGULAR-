@@ -5,7 +5,7 @@
 
 </div-->
 
-<table class="table table-condensed">
+<table class="table table-condensed tableTabla">
     <thead>
       <tr>
         <th>Juego</th>
@@ -16,10 +16,10 @@
     <tbody>
       <tr *ngFor="let juego of listado">
         <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
+        <td>{{juego.jugador}} </td>
+        <td *ngIf="juego.gano">Gano </td>
+        <td *ngIf="!juego.gano">Perdio</td>
       </tr>
-     
+
     </tbody>
   </table>
