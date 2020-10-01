@@ -40,4 +40,9 @@ export class LoginComponent implements OnInit {
     }).catch(err => alert('Usuario o Contraseña incorrectas'))
   }
 
+  InicioRapido()
+  {
+    this.usuario = "testeo@correo.com";
+    this.clave = "testeo";
+  }
 }

@@ -5,8 +5,10 @@
   </div>
   <p class="pTitulo">Sala de Juegos - Adrian Brizuela</p>
   <div class="divLoginRegister">
-    <button class="btnNav"><a class="loginRegister" routerLink="/Registro">Registrarse</a></button>
-    <button class="btnNav"><a class="loginRegister" routerLink="/Login">Ingresar</a></button>
+    <!-- <button class="btnNav"><a class="loginRegister" routerLink="/Registro">Registrarse</a></button>
+    <button class="btnNav"><a class="loginRegister" routerLink="/Login">Ingresar</a></button> -->
+    <p class="pMail">{{usrMail}}</p>
+    <button class="btnNav" (click) = "logout()"><a class="loginRegister" routerLink="/Login">Desconectarse</a></button>
   </div>
 </nav>
 
