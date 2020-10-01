@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { ResJuegosService } from '../../servicios/res-juegos.service';
 
 export interface Tile {
   color: string;
@@ -34,7 +35,7 @@ export class TatetiComponent implements OnInit
     {text: '', cols: 1, rows: 1, color: '#f77f00'}
   ];
 
-  constructor(private route:Router) {
+  constructor(private route:Router, private resultado: ResJuegosService) {
 
   }
 
@@ -56,8 +57,14 @@ export class TatetiComponent implements OnInit
         this.isComputerWinner = this.checkIfWinner();
         if(this.isComputerWinner)
         {
+          this.resultado.guardarResultado('Tateti', 'Perdio');
           this.isHumanTurn = false;
         }
+      }
+
+      if(this.isHumanWinner)
+      {
+        this.resultado.guardarResultado('Tateti', 'Gano');
       }
     }
   }
@@ -102,6 +109,7 @@ export class TatetiComponent implements OnInit
 
       if(findCounter == 18)
       {
+        this.resultado.guardarResultado('Tateti', 'Empato');
         this.isTie = true;
         break;
       }

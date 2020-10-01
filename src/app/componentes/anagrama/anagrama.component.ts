@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResJuegosService } from '../../servicios/res-juegos.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -15,7 +16,7 @@ export class AnagramaComponent implements OnInit {
   respuestaReal:string;
   label:boolean;
 
-  constructor() {
+  constructor(private resultado: ResJuegosService) {
     this.label = true;
   }
 
@@ -37,10 +38,12 @@ export class AnagramaComponent implements OnInit {
     if(this.respuesta == this.respuestaReal)
     {
       this.label = false;
+      this.resultado.guardarResultado('Anagrama', 'Gano');
     }
     else
     {
       this.label = true;
+      this.resultado.guardarResultado('Anagrama', 'Perdio');
     }
 
     return this.label;

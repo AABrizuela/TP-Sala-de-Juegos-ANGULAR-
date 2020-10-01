@@ -1,5 +1,6 @@
-
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -7,19 +8,15 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
   styleUrls: ['./listado-de-resultados.component.css']
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
- listado: Array<any>;
 
+  resultados: Observable<any[]>;
+  listaResultados: any[];
 
-  constructor() {
+  constructor(private dataBase: AngularFireDatabase) {
    }
 
   ngOnInit() {
-
+    this.resultados = this.dataBase.list('resultados').valueChanges();
+    this.resultados.subscribe( resultados => this.listaResultados = resultados, error => console.log(error));
   }
-
-  ver() {
-    console.info(this.listado);
-  }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResJuegosService } from '../../servicios/res-juegos.service';
 
 @Component({
   selector: 'app-memotest',
@@ -21,7 +22,7 @@ export class MemotestComponent implements OnInit {
   public contIntentos: number;
   public msgResultado: string;
 
-  constructor() { }
+  constructor(private resultado: ResJuegosService) { }
 
   ngOnInit(): void {
     this.IniciarJuego();
@@ -83,6 +84,7 @@ export class MemotestComponent implements OnInit {
     }
     if (this.aciertos === this.countAciertos) {
       this.msgResultado = 'Juego terminado en ' + this.contIntentos + ' intento/s.';
+      this.resultado.guardarResultado('Memotest', 'Intentos: ' + this.contIntentos);
       // console.log(this.msgResultado);
     }
     this.contIntentos++;
